@@ -30,6 +30,10 @@ npm run dev
 
 I was lazy about the network connection, so the above only works on ETH Goerli. The way to change it is to _not_ hardcode the `network id` or `tableland registry` here: https://github.com/andrewxhill/next-web3-boilerplate-tableland/blob/main/pages/index.tsx#L11. Instead, you can get them dynamically by the wallet connection. If you want a list of network IDs by their registry addresses, you can see here https://github.com/tablelandnetwork/evm-tableland/blob/main/contracts/utils/TablelandDeployments.sol.
 
+### Easier way
+
+Just a final note that the contract connection approach was only used here for fun/experimentation. The far easier approach would be to just use the [Tableland JS SDK](https://docs.tableland.xyz/javascript-sdk). This avoids the need to wrap the contract manually (since the SDK does it for you). You also get the benefit of SQL verification for free. 
+
 # Readme (original)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmirshko%2Fnext-web3-boilerplate)
