@@ -1,3 +1,37 @@
+# Note
+
+This repo was forked from [https://github.com/mirshko/next-web3-boilerplate](https://github.com/mirshko/next-web3-boilerplate).
+
+I added just a couple of useful Tableland things.
+
+### Contract 
+
+* [Tableland Contract JSON](https://github.com/andrewxhill/next-web3-boilerplate-tableland/blob/main/contracts/TablelandTables.json). This allows you to run `npm run compile-contract-types` to get Tableland registry functions.
+
+### Hooks
+* [Tableland Contract hook](https://github.com/andrewxhill/next-web3-boilerplate-tableland/blob/main/hooks/useTablelandContract.ts). This just sets up the contract so you can build other methods to interact with it. 
+* [Tableland CREATE table hook](https://github.com/andrewxhill/next-web3-boilerplate-tableland/blob/main/hooks/useTablelandCreateTable.ts). An example method to send a CREATE table statement to the registry. 
+* [Tableland TokensOfOwner hook](https://github.com/andrewxhill/next-web3-boilerplate-tableland/blob/main/hooks/useTablelandTokensOfOwner.ts). An example method to fetch all tables owned by the currently connected wallet. 
+
+### Components
+
+* [TablelandTables](https://github.com/andrewxhill/next-web3-boilerplate-tableland/blob/main/components/TablelandTables.tsx). Take the list of tables returned by the TokensOfOwner and render the SVGs in a grid. 
+* [TablelandCreateTable](https://github.com/andrewxhill/next-web3-boilerplate-tableland/blob/main/components/TablelandCreateTable.tsx). A simple form for a CREATE statement. On submnit it will send to the registry.
+
+### Running examples
+
+Just use the setup instructions in the original readme below. here's the tldr, 
+
+```
+npm install
+npm run compile-contract-types
+npm run dev
+```
+
+I was lazy about the network connection, so the above only works on ETH Goerli. The way to change it is to _not_ hardcode the `network id` or `tableland registry` here: https://github.com/andrewxhill/next-web3-boilerplate-tableland/blob/main/pages/index.tsx#L11. Instead, you can get them dynamically by the wallet connection. If you want a list of network IDs by their registry addresses, you can see here https://github.com/tablelandnetwork/evm-tableland/blob/main/contracts/utils/TablelandDeployments.sol.
+
+# Readme (original)
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmirshko%2Fnext-web3-boilerplate)
 
 This is a default [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app), customized as the default boilerplate for new Web3 projects.
